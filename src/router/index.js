@@ -8,12 +8,27 @@ const routes = [
     path: '/',
     name: 'layout',
     redirect: {name: 'dashboard'},
-    component: () => import('../views/layout.vue')
+    component: () => import('../views/layout.vue'),
     children: [
       {
         path: '/dashboard',
         name: 'dashboard',
         component: () => import('../views/dashboard/index.vue')
+      },
+      {
+        path: '/products',
+        name: 'Products',
+        component: () => import('../views/products/product-list.vue')
+      },
+      {
+        path: '/orders',
+        name: 'Orders',
+        component: () => import('../views/orders/order-list.vue')
+      },
+      {
+        path: '/blogs',
+        name: 'Blogs',
+        component: () => import('../views/blogs/blog-list.vue')
       }
     ],
   },
